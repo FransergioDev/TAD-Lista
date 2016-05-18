@@ -33,6 +33,12 @@ typename Vector<T>::Iterator Vector<T>::Iterator::operator--(char x)
 }
 
 template < class T >
+void Vector<T>::Iterator::operator=( const Iterator & it2)
+{
+    it_ptr = it2.it_ptr;
+}
+
+template < class T >
 bool Vector<T>::Iterator::operator==( const Iterator & it2) const
 {
     return (it_ptr == it2.it_ptr);
@@ -48,6 +54,12 @@ bool Vector<T>::Iterator::operator!=( const Iterator & it2) const
 template < class T >
 Vector<T>::Const_Iterator::Const_Iterator(T * vec) : const_it_ptr(vec)
         {}
+
+template < class T >
+void Vector<T>::Const_Iterator::operator=( const Const_Iterator & it2)
+{
+    const_it_ptr = it2.const_it_ptr;
+}
 
 template < class T >
 bool Vector<T>::Const_Iterator::operator==( const Const_Iterator & it2) const

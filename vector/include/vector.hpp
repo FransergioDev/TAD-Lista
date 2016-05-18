@@ -25,6 +25,7 @@ class Vector
                 Iterator & operator--(int x);
                 Iterator operator++(char);
                 Iterator operator--(char);
+                void operator= ( const Iterator & it2);
                 bool operator==( const Iterator & it2) const;
                 bool operator!=( const Iterator & it2) const;
 
@@ -38,6 +39,7 @@ class Vector
             public:
 
                 Const_Iterator(T * vec = nullptr);
+                void operator=( const Const_Iterator & it2);
                 bool operator==( const Const_Iterator & it2) const;
                 bool operator!=( const Const_Iterator & it2) const;
 
