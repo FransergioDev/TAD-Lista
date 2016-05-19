@@ -1,7 +1,9 @@
-# BARES (Basic Arithmetic Expression Evaluator based on Stacks)
+# TADs Lista 
+#### (*Vector*, *List* e *Forward List*)
 
-### tópicos abordados:  
-  
+### tópicos abordados:
+
+- **Apresentação**;  
 - **A implementação**;
 - **Como compilar e executar**
 - **Testes realizados**;
@@ -9,22 +11,31 @@
 - **Observações**;
 - **Sobre o grupo**;
 
-##### status do projeto: **Quase finalizado**  
+##### status do projeto: **v 0.0.7**  
 
+#### Apresentação:
+Nesse projeto temos como objetivo simular o comportamento de três das 
+estrututuras de dados do STL (Vector, List e Forward_list), para tal
+usamos das TADs Lista simples, lista duplamente encadeada e lista 
+encadeada, respectivamente. Até a versão atual apenas o Vector e
+o Forward_list estão implementados em sua maior parte.
+    
+As implementações foram feitas em C++ e estão adaptadas para receberem
+tipos variados de dados.    
 #### A implementação:  
   
   Os seguintes arquivos são pertencentes a implementação do vector:
   
   1) **Vector/src/main.hpp** : Contém o codigo da função main
-  2) **Vector/include/Forware_list.hpp** :  Contém a classe Vector.
-  3) **Vector/src/Forware_list.inl** : Contém a implentação dos métodos da classe Vector.
-  4) **Vector/src/iterator.cpp** :  Possui a implementação dos metodos das classes Iterator e Const_Iterator.
+  2) **Vector/include/Forward_list.hpp** :  Contém a classe Vector.
+  3) **Vector/src/Forward_list.inl** : Contém a implentação dos métodos da classe Vector.
+  4) **Vector/src/iterator.inl** :  Possui a implementação dos metodos das classes Iterator e Const_Iterator.
   
-  E os seguintes arquivos são pertencentes a implementação do Forware_list:
+  E os seguintes arquivos são pertencentes a implementação do Forward_list:
   
-  1) **Forware_list/src/main.hpp** : Contém o codigo da função main
-  2) **Forware_list/include/Forware_list.hpp** :  Contém a classe Forware_list.
-  3) **Forware_list/src/Forware_list.inl** : Contém a implentação dos métodos da classe Forware_list.
+  1) **Forward_list/src/main.hpp** : Contém o codigo da função main
+  2) **Forward_list/include/Forward_list.hpp** :  Contém a classe Forward_list.
+  3) **Forward_list/src/Forward_list.inl** : Contém a implentação dos métodos da classe Forward_list.
   4) **Forware_list/src/iterator.cpp** :  Possui a implementação dos metodos das classes Iterator e Const_Iterator.
   
 ### Como compilar e executer
@@ -33,9 +44,9 @@
   
     g++ -std=c++11 -I include src/main.cpp -o bin/Vector
   
-  Já para compilar o código de Forware_list os requerimentos/conselhos são os mesmos, com exeção da pasta em que o terminar deve estar aberto. A pasta é a Forware_list e o comando do g++ é:
+  Já para compilar o código de Forware_list os requerimentos/conselhos são os mesmos, com exeção da pasta em que o terminar deve estar aberto. A pasta é a Forward_list e o comando do g++ é:
   
-    g++ -std=c++11 -I include src/main.cpp -o bin/Forware_list
+    g++ -std=c++11 -I include src/main.cpp -o bin/Forward_list
   
 ### Testes realizados:
   
@@ -43,7 +54,7 @@
     
 ### Bugs:
   
-  O codigo ainda não está finalizado. A classe referente a lista duplamente encadeada não foi implementada. Entretando oque foi escrito está funcional, isso não significa que o código está perfeito ou livre de erros. Provavelmente existe muito codigo a ser otimizado, mas por conta da carga de trabalhos enfrentados nesse momento estamos postando esse codigo no GitHub. O repositorio está indicado no final desse documento.
+  O codigo ainda não está finalizado. A classe referente a lista duplamente encadeada não foi implementada. Entretando o que foi escrito está funcional, isso não significa que o código está perfeito ou livre de erros. Provavelmente existe muito codigo a ser otimizado. O repositorio está indicado no final desse documento.
 
 ### Observações:
 
@@ -69,4 +80,3 @@
 - **GitHub**:  https://github.com/Yuri-wrlk ;
 - **email**: yurinatal@hotmail.com ;
     
-  
