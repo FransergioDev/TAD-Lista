@@ -2,17 +2,17 @@
  *	@file iterator.inl
  *
  *  Arquivo que contém as implementações dos métodos das classes Iterator e
- *  Const_Iterator, contidas na classe Vector
+ *  Const_Iterator, contidas na classe Forward_list
  */
 
 /*!
  *	@brief Construtor da classe.
- *  @param vec um ponteiro para um objeto do tipo do vetor
+ *  @param flis um ponteiro para um objeto do tipo da lista
  *
  *  atribui o ponteiro à variável  it_ptr
  */
 template < class T >
-Vector<T>::Iterator::Iterator(T * vec) : it_ptr(vec)
+Forward_list<T>::Iterator::Iterator(T * flis) : it_ptr(flis)
         {}
 
 /*!
@@ -22,7 +22,7 @@ Vector<T>::Iterator::Iterator(T * vec) : it_ptr(vec)
  *  @return o ponteiro incrementado
  */
 template < class T >
-typename Vector<T>::Iterator &  Vector<T>::Iterator::operator++(int k)
+typename Forward_list<T>::Iterator &  Forward_list<T>::Iterator::operator++(int k)
 {
     it_ptr++;
     return *this;
@@ -35,7 +35,7 @@ typename Vector<T>::Iterator &  Vector<T>::Iterator::operator++(int k)
  *  @return o ponteiro decrementado
  */
 template < class T >
-typename Vector<T>::Iterator &  Vector<T>::Iterator::operator--(int x)
+typename Forward_list<T>::Iterator &  Forward_list<T>::Iterator::operator--(int x)
 {
     it_ptr--;
     return *this;
@@ -48,7 +48,7 @@ typename Vector<T>::Iterator &  Vector<T>::Iterator::operator--(int x)
  *  @return O ponteiro no estado antes de ser incrementado
  */
 template < class T >
-typename Vector<T>::Iterator Vector<T>::Iterator::operator++(char k)
+typename Forward_list<T>::Iterator Forward_list<T>::Iterator::operator++(char k)
 {
     Iterator old(it_ptr);
     ++it_ptr;
@@ -62,12 +62,13 @@ typename Vector<T>::Iterator Vector<T>::Iterator::operator++(char k)
  *  @return O ponteiro no estado antes de ser decrementado
  */
 template < class T >
-typename Vector<T>::Iterator Vector<T>::Iterator::operator--(char x)
+typename Forward_list<T>::Iterator Forward_list<T>::Iterator::operator--(char x)
 {
     Iterator old(it_ptr);
     --it_ptr;
     return old;
 }
+
 
 /*!
  *	@brief Sobrecarga do operador =.
@@ -76,7 +77,7 @@ typename Vector<T>::Iterator Vector<T>::Iterator::operator--(char x)
  *  iguala os ponteiros de ambos iteradores
  */
 template < class T >
-void Vector<T>::Iterator::operator=( const Iterator & it2)
+void Forward_list<T>::Iterator::operator=( const Iterator & it2)
 {
     it_ptr = it2.it_ptr;
 }
@@ -88,7 +89,7 @@ void Vector<T>::Iterator::operator=( const Iterator & it2)
  *  @return True se os ponteiros apontam o mesmo objeto, False caso contrário
  */
 template < class T >
-bool Vector<T>::Iterator::operator==( const Iterator & it2) const
+bool Forward_list<T>::Iterator::operator==( const Iterator & it2) const
 {
     return (it_ptr == it2.it_ptr);
 }
@@ -100,19 +101,19 @@ bool Vector<T>::Iterator::operator==( const Iterator & it2) const
  *  @return True se os ponteiros não apontam o mesmo objeto, False caso contrário
  */
 template < class T >
-bool Vector<T>::Iterator::operator!=( const Iterator & it2) const
+bool Forward_list<T>::Iterator::operator!=( const Iterator & it2) const
 {
     return (it_ptr != it2.it_ptr);
 }
 
 /*!
  *	@brief Construtor da classe.
- *  @param vec um ponteiro para um objeto do tipo do vector
+ *  @param flis um ponteiro para um objeto do tipo da lista
  *
  *  atribui o ponteiro à variável  it_ptr
  */
 template < class T >
-Vector<T>::Const_Iterator::Const_Iterator(T * vec) : const_it_ptr(vec)
+Forward_list<T>::Const_Iterator::Const_Iterator(T * flis) : const_it_ptr(flis)
         {}
 
 /*!
@@ -122,7 +123,7 @@ Vector<T>::Const_Iterator::Const_Iterator(T * vec) : const_it_ptr(vec)
  *  iguala os ponteiros de ambos iteradores
  */
 template < class T >
-void Vector<T>::Const_Iterator::operator=( const Const_Iterator & it2)
+void Forward_list<T>::Const_Iterator::operator=( const Const_Iterator & it2)
 {
     const_it_ptr = it2.const_it_ptr;
 }
@@ -134,7 +135,7 @@ void Vector<T>::Const_Iterator::operator=( const Const_Iterator & it2)
  *  @return True se os ponteiros apontam o mesmo objeto, False caso contrário
  */
 template < class T >
-bool Vector<T>::Const_Iterator::operator==( const Const_Iterator & it2) const
+bool Forward_list<T>::Const_Iterator::operator==( const Const_Iterator & it2) const
 {
     return (const_it_ptr == it2.const_it_ptr);
 }
@@ -146,7 +147,7 @@ bool Vector<T>::Const_Iterator::operator==( const Const_Iterator & it2) const
  *  @return True se os ponteiros não apontam o mesmo objeto, False caso contrário
  */
 template < class T >
-bool Vector<T>::Const_Iterator::operator!=( const Const_Iterator & it2) const
+bool Forward_list<T>::Const_Iterator::operator!=( const Const_Iterator & it2) const
 {
     return (const_it_ptr != it2.const_it_ptr);
 }

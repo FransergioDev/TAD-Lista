@@ -1,6 +1,12 @@
 /*!
- *   Esse contrutor cria o vector
- *   @params _size   Esse parametro é o tamanho do vector.
+ *	@file Vector.inl
+ *
+ *  Arquivo que contém as implementações dos métodos da classe Vector
+ */
+
+/*!
+ *   @brief     Esse contrutor cria o vector
+ *   @param    _size   Esse parametro é o tamanho do vector.
  */
 template < class T >
 Vector<T>::Vector(size_type _size) :
@@ -10,8 +16,8 @@ Vector<T>::Vector(size_type _size) :
         {}
 
 /*!
- *   Esse contrutor cria o vector
- *   @params toCopy  o objeto vector que deverá ser copiado para o que esta sendo construído.
+ *   @brief     Esse contrutor cria o vector
+ *   @param    toCopy  o objeto vector que deverá ser copiado para o que esta sendo construído.
  */
 template <class T>
 Vector<T>::Vector(Vector & toCopy) :
@@ -23,6 +29,9 @@ Vector<T>::Vector(Vector & toCopy) :
     }
 }
 
+/*!
+*    @brief     Esse é o destrutor
+*/
 template <class T>
 Vector<T>::~Vector()
 {
@@ -30,8 +39,8 @@ Vector<T>::~Vector()
 }
 
 /*!
- *   Implementa o operador []
- *   @params recebe como parametro o index do elemento a ser acessado.
+ *   @brief Implementa o operador []
+ *   @param recebe como parametro o index do elemento a ser acessado.
  *   @return retorna uma referência do elemento que foi pedido.
  */
 template <class T>
@@ -42,6 +51,11 @@ T & Vector<T>::operator[] (size_type idx) const
     return arr[idx];
 }
 
+/*!
+*    @brief     Essa funcao retorna o elemento no indice que foi passado no parametro idx.
+*    @param    idx     esse parametro é o índice do elemento que deverá ser retornado
+*    @return    O retorno é uma copia do elemento na posição especificada
+*/
 template <class T>
 T & Vector<T>::at(size_type idx)
 {
@@ -53,11 +67,20 @@ T & Vector<T>::at(size_type idx)
     }
 }
 
+/*!
+*    @brief     Essa funcao retorna a capacidade que o vector possui
+*    @return    O retorno é a capacidade que o array interno do vector possui
+*/
 template <class T>
 size_type Vector<T>::capacity() const {
     return arrCapacity;
 }
 
+/*!
+*    @brief     Essa funcao aumenta a capacidade do array interno do vector se essa nova capacidade for maior do que a atual.
+*    @param    new_capacity   esse parametro é a nova capacidade do array interno do vector
+*    @return    Essa função não possui retorno
+*/
 template <class T>
 void Vector<T>::reserve(size_type new_capacity) {
     if(new_capacity == 0) {
@@ -78,9 +101,8 @@ void Vector<T>::reserve(size_type new_capacity) {
 }
 
 /*!
- *   Implementa o operador []
- *   @params recebe como parametro o index do elemento a ser acessado.
- *   @return retorna uma referência do elemento que foi pedido.
+ *   @Brief     Essa função retorna o size (quantidade de elementos dentro do array interno do vector).
+ *   @return    O retorno é o size do array interno do vector.
  */
 template < class T >
 size_type Vector<T>::size() const
@@ -88,6 +110,10 @@ size_type Vector<T>::size() const
     return arrSz;
 }
 
+/*!
+*    @brief     A funcao clear() deleta todos os elementos dentro do array interno do vector usando seus destrutores.
+*    @return    Essa função não possui retorno.
+*/
 template < class T >
 void Vector<T>::clear()
 {
@@ -98,9 +124,9 @@ void Vector<T>::clear()
     arrSz = 0;
 }
 
-/**
-*   A função empty() informa se o vetor está vazio.
-*   @return caso o vetor esteja vazio o retorno é true, caso contrario é false.
+/*!
+*   @brief      A função empty() informa se o vetor está vazio.
+*   @return     O retorno desse função é true caso esteja vazio, caso contrario é false.
 */
 template < class T >
 bool Vector<T>::empty()
@@ -108,10 +134,10 @@ bool Vector<T>::empty()
     return arrSz == 0;
 }
 
-/**
-*   A função push_back() adiciona um elemento na (ultima posição ocupada do array) + 1.
-*   @param  x   Esse argumento recebe a referencia do elemento que deve ser adicionado no array.
-*   @return esta função não possui retorno.
+/*!
+*   @brief      A função push_back() adiciona um elemento na (ultima posição ocupada do array) + 1.
+*   @param      x   Esse argumento recebe a referencia do elemento que deve ser adicionado no array.
+*   @return     esta função não possui retorno.
 */
 template < class T >
 void Vector<T>::push_back( const T & x )
@@ -122,10 +148,9 @@ void Vector<T>::push_back( const T & x )
     arrSz++;
 }
 
-/**
-*   A função pop_back() deleta o ultimo elemento existente no array. Se o array estiver vazio lança uma exeção de array vazio.
-*   @see empty()
-*   @return esta função não possui retorno.
+/*!
+*   @brief       A função pop_back() deleta o ultimo elemento existente no array. Se o array estiver vazio lança uma exeção de array vazio.
+*   @return     esta função não possui retorno.
 */
 template < class T >
 void Vector<T>::pop_back()
@@ -138,9 +163,9 @@ void Vector<T>::pop_back()
     arrSz--;
 }
 
-/**
-*   A função back() retorna o valor armazenado na ultima posição do array.
-*   @return esta função tem como retorno uma referencia ao elemento armazenado na ultima posição do array.
+/*!
+*   @brief      A função back() retorna o valor armazenado na ultima posição do array.
+*   @return     O retorno dessa função é uma referencia ao elemento armazenado na ultima posição do array.
 */
 template < class T >
 const T & Vector<T>::back() const
@@ -153,9 +178,9 @@ const T & Vector<T>::back() const
     return arr[arrSz - 1];
 }
 
-/**
-*   A função front() retorna o valor armazenado na primeira posição do array.
-*   @return esta função tem como retorno uma referencia ao elemento armazenado na primeira posição do array.
+/*!
+*   @brief      A função front() retorna o valor armazenado na primeira posição do array.
+*   @return     O retorno dessa função é uma referencia ao elemento armazenado na primeira posição do array.
 */
 template < class T >
 const T & Vector<T>::front() const
@@ -167,10 +192,10 @@ const T & Vector<T>::front() const
     return arr[0];
 }
 
-/**
-*   A função assign substitui os valores das posições do array que estão armazenado algo pelo valor que foi passado como argumento.
-*   @param  x   recebe o valor que irá substituir os valores das posições que estão armazenando algo.
-*   @return esta função não possue retorno
+/*!
+*   @brief      A função assign substitui os valores das posições do array que estão armazenando algo pelo valor que foi passado como argumento.
+*   @param      x   esse parametro recebe o valor que irá substituir os valores das posições que estão armazenando algo.
+*   @return     esta função não possue retorno
 */
 template < class T >
 void Vector<T>::assign(const T & x)
