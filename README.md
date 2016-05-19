@@ -70,13 +70,13 @@ tipos variados de dados.
 
 ### Sobre o grupo:
     
-- **Aluno**: Nalbert Gabriel Melo Leal ;
-- **GitHub**: github.com/nalbertg  ;
-- **email pessoal**: nalbertrn@yahoo.com.br ;
-- **email acadêmico/profissional**: nalbertg@outlook.com ;  
+- **Aluno**: Nalbert Gabriel Melo Leal;
+- **GitHub**: github.com/nalbertg ;
+- **email pessoal**: nalbertrn@yahoo.com.br;
+- **email acadêmico/profissional**: nalbertg@outlook.com;
   
 
-- **Aluno**: Yuri Reinaldo ;
+- **Aluno**: Yuri Reinaldo;
 - **GitHub**:  https://github.com/Yuri-wrlk ;
 - **email**: yurinatal@hotmail.com ;
     
